@@ -42,6 +42,25 @@ Global RST, WEP, ENG, SYS
 	send %SYS%
 }
 
+PIP204() {
+Global RST, WEP, ENG, SYS
+	send %RST%
+	send %SYS%
+	send %WEP%
+	send %WEP%
+	send %WEP%
+}
+
+PIP303() {
+Global RST, WEP, ENG, SYS
+	send %RST%
+	send %SYS%
+	send %SYS%
+	send %WEP%
+	send %WEP%
+}
+
+
 ResetPIPs() {
 Global RST, WEP, ENG, SYS
 	send %RST%
@@ -56,11 +75,16 @@ Global RST, WEP, ENG, SYS
 
 */
 
-r::PIP420()
+!q::PIP420()
 
-t::PIP042()
+!w::PIP042()
 
-y::PIP402()
+!e::PIP303()
+
+!a::PIP402()
+
+!d::PIP204()
+
 
 ;; CTRL+0 закрыть скрипт если напортачил и начала творится лютая дичь...
 ^0::exitapp
