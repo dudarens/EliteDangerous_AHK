@@ -2,7 +2,7 @@
 
 */
 
-#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+#NoEnv  ;; Рекомендуеться для производительности и совместимости с будущими рлизами платформы AHK.
 #Singleinstance force ;; чтобы не открывался несколько раз
 #Persistent ;; Держать открытым пока пользователь сам не закроет скрипт из панели или горячей клавишей
 
@@ -33,21 +33,23 @@ Alt + E — 303
 Alt + R — 033
 */
 
-!a::PIPCombinationGenerate(4, 2, 0)
 
-!s::PIPCombinationGenerate(4, 0, 2)
+;; up после пробела в данном случае чтобы предотвратить повторное срабатывание когда комбинация остаеться зажатой
+!a up::PIPCombinationGenerate(4, 2, 0)
 
-!d::PIPCombinationGenerate(0, 2, 4)
+!s up::PIPCombinationGenerate(4, 0, 2)
 
-!f::PIPCombinationGenerate(2, 0, 4)
+!d up::PIPCombinationGenerate(0, 2, 4)
 
-!q::PIPCombinationGenerate(2, 4, 0)
+!f up::PIPCombinationGenerate(2, 0, 4)
 
-!w::PIPCombinationGenerate(0, 4, 2)
+!q up::PIPCombinationGenerate(2, 4, 0)
 
-!e::PIPCombinationGenerate(3, 0, 3)
+!w up::PIPCombinationGenerate(0, 4, 2)
 
-!r::PIPCombinationGenerate(0, 3, 3)
+!e up::PIPCombinationGenerate(3, 0, 3)
+
+!r up::PIPCombinationGenerate(0, 3, 3)
 
 
 ;; CTRL+0 закрыть скрипт если напортачил и начала творится лютая дичь...
