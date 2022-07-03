@@ -60,6 +60,24 @@ Global RST, WEP, ENG, SYS
 	send %WEP%
 }
 
+PIP240() {
+Global RST, WEP, ENG, SYS
+	send %RST%
+	send %SYS%
+	send %ENG%
+	send %ENG%
+	send %ENG%
+}
+
+PIP024() {
+Global RST, WEP, ENG, SYS
+	send %RST%
+	send %ENG%
+	send %WEP%
+	send %WEP%
+	send %WEP%
+}
+
 
 ResetPIPs() {
 Global RST, WEP, ENG, SYS
@@ -81,9 +99,13 @@ Global RST, WEP, ENG, SYS
 
 !e::PIP303()
 
+!r::PIP240()
+
 !a::PIP402()
 
 !d::PIP204()
+
+!f::PIP024()
 
 
 ;; CTRL+0 закрыть скрипт если напортачил и начала творится лютая дичь...
